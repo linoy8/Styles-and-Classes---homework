@@ -1,0 +1,193 @@
+﻿<head>
+
+    <title>className Example</title>
+
+    <style>
+        .red {
+            color: red;
+        }
+
+        .blue {
+            color: blue;
+        }
+
+        .green {
+            color: green;
+        }
+    </style>
+</head>
+
+<!-- task1 -->
+<body>
+
+    <div id="MyId" class="items">
+        <p class="parag">This is the first paragraph.</p>
+        <p class="parag">This is the second paragraph.</p>
+        <p class="parag">This is the third paragraph.</p>
+    </div>
+
+    <button onClick="changeColor('red')">Make Red</button>
+    <button onClick="changeColor('blue')">Make Blue</button>
+    <button onClick="changeColor('green')">Make Green</button>
+
+    <script>
+          function changeColor(color) {
+                //choose div.items
+                const div = document.querySelector('.items');
+                div.className = 'items ' + color;
+          }
+    </script>
+</body>
+
+<head>
+    <!-- task2 -->
+    <title>Toggle Theme</title>
+    <style>
+        .light-theme {
+            background-color: white;
+            color: black;
+        }
+
+        .dark-theme {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body class="light-theme">
+    <p>This is a sample paragraph.</p>
+    <button onClick="toggleTheme()">Toggle Theme</button>
+
+    <script>
+        function toggleTheme() {
+           const body = document.querySelector('body');
+           if (body.className === 'light-theme') {
+               body.className = 'dark-theme';
+           } else {
+               body.className = 'light-theme';
+           }
+        }
+    </script>
+</body>
+
+<!-- task4 -->
+<head>
+    <body>
+        <style>
+            .myClass2 {
+                color: blue;
+            }
+
+            .myClass {
+                color: red;
+            }
+        </style>
+        <div id="myDiv" class="myClass">
+            <p>this is a  paragraph nunber 1.</p>
+        </div>
+
+        <div id="myDiv2" class="myClass2">
+
+        </div>
+
+        <button onclick="hideOrNot()"> Hey!</button>
+        <script>
+
+        function hideOrNot() {
+            const div = document.querySelector('.myClass');
+            div.classList.replace('myClass', 'myClass2');
+        }
+        </script>
+
+    </body>
+
+
+</head>
+
+<!-- task5 -->
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab Switcher</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        .tabs {
+            display: inline-flex;
+            gap: 10px;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #ddd;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 16px;
+        }
+
+            .tab-btn:hover {
+                background-color: #bbb;
+            }
+
+            .tab-btn.active {
+                background-color: #3498db;
+                color: white;
+                font-weight: bold;
+            }
+
+        #display {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: white;
+            border: 2px solid #3498db;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            min-height: 60px;
+            max-width: 500px;
+            margin-inline: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>בחר כרטיסייה:</h2>
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab(0)">טאב 1</button>
+        <button class="tab-btn" onclick="showTab(1)">טאב 2</button>
+        <button class="tab-btn" onclick="showTab(2)">טאב 3</button>
+    </div>
+
+    <div id="display">
+
+    </div>
+
+    <script>
+   const tabTexts =[
+    "welcome",
+    'more info',
+    'contact us'
+  ];
+   function showTab(index) {
+    const div = document.getElementById('display');
+    div.innerText = tabTexts[index];
+
+   }
+
+
+
+    </script>
+
+</body>
+</html>
