@@ -31,11 +31,11 @@
     <button onClick="changeColor('green')">Make Green</button>
 
     <script>
-          function changeColor(color) {
-                //choose div.items
-                const div = document.querySelector('.items');
-                div.className = 'items ' + color;
-          }
+        function changeColor(color) {
+            //choose div.items
+            const div = document.querySelector('.items');
+            div.className = 'items ' + color;
+        }
     </script>
 </body>
 
@@ -60,12 +60,12 @@
 
     <script>
         function toggleTheme() {
-           const body = document.querySelector('body');
-           if (body.className === 'light-theme') {
-               body.className = 'dark-theme';
-           } else {
-               body.className = 'light-theme';
-           }
+            const body = document.querySelector('body');
+            if (body.className === 'light-theme') {
+                body.className = 'dark-theme';
+            } else {
+                body.className = 'light-theme';
+            }
         }
     </script>
 </body>
@@ -93,10 +93,10 @@
         <button onclick="hideOrNot()"> Hey!</button>
         <script>
 
-        function hideOrNot() {
-            const div = document.querySelector('.myClass');
-            div.classList.replace('myClass', 'myClass2');
-        }
+            function hideOrNot() {
+                const div = document.querySelector('.myClass');
+                div.classList.replace('myClass', 'myClass2');
+            }
         </script>
 
     </body>
@@ -174,20 +174,49 @@
     </div>
 
     <script>
-   const tabTexts =[
-    "welcome",
-    'more info',
-    'contact us'
-  ];
-   function showTab(index) {
-    const div = document.getElementById('display');
-    div.innerText = tabTexts[index];
+        const tabTexts = [
+            "welcome",
+            'more info',
+            'contact us'
+        ];
+        function showTab(index) {
+            const div = document.getElementById('display');
+            div.innerText = tabTexts[index];
 
-   }
+        }
+
 
 
 
     </script>
 
 </body>
+</html>
+
+<!-- task6 -->
+<html>
+
+<body>
+
+    <div class="list-item" onclick="toggleColor(this)">click me </div>
+    <div class="list-item" onclick="toggleColor(this)">click me too</div>
+    <style>
+        .list-item {
+            padding: 10px;
+            margin: 5px;
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        function toggleColor(element) {
+            if (element.style.color === "red") {
+                element.style.color = "black";
+            } else {
+                element.style.color = "red";
+            }
+        }
+    </script>
+</body>
+
 </html>
